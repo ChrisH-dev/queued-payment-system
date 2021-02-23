@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: api-gateway
+spec:
+  containers:
+  - name: api-gateway
+    image: localhost:32000/api-gateway:0.0.1-SNAPSHOT
+    imagePullPolicy: Always
+    ports:
+    - containerPort: 8080
+    env:
+    - name: BROKER_URL
+      value: "rabbitmq-service"

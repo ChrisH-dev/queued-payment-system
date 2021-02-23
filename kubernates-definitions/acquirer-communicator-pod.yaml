@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: acquirer-communicator
+spec:
+  containers:
+  - name: acquirer-communicator
+    image: localhost:32000/acquirer-communicator:0.0.1-SNAPSHOT
+    imagePullPolicy: Always
+    env:
+    - name: BROKER_URL
+      value: "rabbitmq-service"
